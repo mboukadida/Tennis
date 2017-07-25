@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE3B50F1-E1ED-442A-AA77-C95360E01AAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tennis</RootNamespace>
+    <AssemblyName>Tennis</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationLayer\Game\IPlayerService.cs" />
+    <Compile Include="ApplicationLayer\Game\PlayerDto.cs" />
+    <Compile Include="ApplicationLayer\Game\PlayerService.cs" />
+    <Compile Include="ApplicationLayer\Player\IPlayerService.cs" />
+    <Compile Include="ApplicationLayer\Player\PlayerDto.cs" />
+    <Compile Include="ApplicationLayer\Player\PlayerService.cs" />
+    <Compile Include="ApplicationLayer\Set\ISetService.cs" />
+    <Compile Include="ApplicationLayer\Set\SetDto.cs" />
+    <Compile Include="ApplicationLayer\Set\SetService.cs" />
+    <Compile Include="DomainLayer\Entities\GameScore.cs" />
+    <Compile Include="DomainLayer\Entities\SetScore.cs" />
+    <Compile Include="DomainLayer\Events\SetWinned.cs" />
+    <Compile Include="DomainLayer\Events\SetWinnedHandler.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreTieBreak.cs" />
+    <Compile Include="DomainLayer\States\SetScore\SetScoreOver.cs" />
+    <Compile Include="DomainLayer\States\SetScore\SetScoreTieBreak.cs" />
+    <Compile Include="DomainLayer\States\SetScore\SetScoreStandard.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreAdvantage.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreDeuce.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreOver.cs" />
+    <Compile Include="DomainLayer\States\GameScore\AdvantageWinLose.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreStandard.cs" />
+    <Compile Include="DomainLayer\States\GameScore\GameScoreState.cs" />
+    <Compile Include="DomainLayer\States\SetScore\SetScoreState.cs" />
+    <Compile Include="DomainLayer\Events\SetStarted.cs" />
+    <Compile Include="DomainLayer\Events\SetStartedHandler.cs" />
+    <Compile Include="Helpers\Domain\Editor.cs" />
+    <Compile Include="DomainLayer\Editors\GameEditor.cs" />
+    <Compile Include="Helpers\Domain\IEditor.cs" />
+    <Compile Include="DomainLayer\Events\GameStartedHandler.cs" />
+    <Compile Include="DomainLayer\Events\GameWinned.cs" />
+    <Compile Include="DomainLayer\Events\GameWinnedHandler.cs" />
+    <Compile Include="DomainLayer\Events\PointWinned.cs" />
+    <Compile Include="DomainLayer\Events\PointWinnedHadler.cs" />
+    <Compile Include="Helpers\Domain\DomainEvents.cs" />
+    <Compile Include="DomainLayer\Events\GameStarted.cs" />
+    <Compile Include="DomainLayer\Factories\SetFactory.cs" />
+    <Compile Include="DomainLayer\Factories\PlayerFactory.cs" />
+    <Compile Include="DomainLayer\Factories\GameFactory.cs" />
+    <Compile Include="DomainLayer\Entities\Player.cs" />
+    <Compile Include="DomainLayer\Entities\Set.cs" />
+    <Compile Include="DomainLayer\Entities\Game.cs" />
+    <Compile Include="Helpers\Domain\Handler.cs" />
+    <Compile Include="Helpers\Domain\IAggregateRoot.cs" />
+    <Compile Include="Helpers\Domain\Entity.cs" />
+    <Compile Include="Helpers\Domain\IDomainEvent.cs" />
+    <Compile Include="Helpers\Domain\ObjectValue.cs" />
+    <Compile Include="Helpers\Extensions\EnumExtensions.cs" />
+    <Compile Include="Helpers\Factory\Factory.cs" />
+    <Compile Include="Helpers\Factory\IFactory.cs" />
+    <Compile Include="Helpers\Repository\IRepositorycs.cs" />
+    <Compile Include="Helpers\Repository\IUnitOfWorkcs.cs" />
+    <Compile Include="Helpers\Specification\And.cs" />
+    <Compile Include="Helpers\Specification\IExtensions.cs" />
+    <Compile Include="Helpers\Specification\ISpecification.cs" />
+    <Compile Include="Helpers\Specification\Negate.cs" />
+    <Compile Include="Helpers\Specification\Or.cs" />
+    <Compile Include="Helpers\Specification\SpecificationBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DomainLayer\Specifications\" />
+    <Folder Include="DomainLayer\Validators\" />
+    <Folder Include="InfrastructureLayer\Cache\" />
+    <Folder Include="InfrastructureLayer\Logging\" />
+    <Folder Include="InfrastructureLayer\Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
