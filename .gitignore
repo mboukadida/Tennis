@@ -42,3 +42,12 @@
 /Tennis/Tennis.Tests/obj
 /Tennis/Tennis.WebService/bin
 /Tennis/Tennis.WebService/obj
+/Tennis/packages/NUnit.ConsoleRunner.3.7.0
+/Tennis/packages/NUnit.Extension.NUnitProjectLoader.3.5.0
+/Tennis/packages/NUnit.Extension.NUnitV2Driver.3.6.0
+/Tennis/packages/ReportGenerator.3.0.2
+/Tennis/packages/OpenCover.4.6.519
+/Tennis/packages/NUnit.Runners.3.7.0
+/Tennis/packages/NUnit.Extension.VSProjectLoader.3.5.0
+/Tennis/packages/NUnit.Extension.TeamCityEventListener.1.0.2
+/Tennis/packages/NUnit.Extension.NUnitV2ResultWriter.3.5.0
